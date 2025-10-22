@@ -36,5 +36,23 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+    function navigateToPage(pageNumber) {
+        const pages = [
+            "index.html",
+            "page2.html", 
+            "page3.html",
+            "page4.html",
+            "page5.html"
+        ];
+        
+        if (pageNumber >= 1 && pageNumber <= pages.length) {
+            // Add cache-busting parameter
+            const timestamp = new Date().getTime();
+            window.location.href = pages[pageNumber - 1] + '?v=' + timestamp;
+        }
+    }
+    </script>
 </body>
+
 </html>
