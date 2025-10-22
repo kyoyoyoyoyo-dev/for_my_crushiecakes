@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Everything 💫</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="hearts.png">
+</head>
+<body>
+    <div class="container">
+        <div class="hearts-background">
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+            <div class="heart">💓</div>
+            <div class="heart">💞</div>
+            <div class="heart">🌟</div>
+            <div class="heart">💫</div>
+            <div class="heart">✨</div>
+            <div class="heart">🥰</div>
+        </div>
+        
+        <div class="final-layout">
+            <div class="message-box final-message">
+                <div class="page-indicator">
+                    <span class="page-number">5</span>
+                    <span class="page-total">/5</span>
+                </div>
+                
+                <h1 class="title">My Everything 💫</h1>
+                <p class="subtitle">The final reason, but just the beginning...</p>
+                
+                <div class="reason-card final-card">
+                    <div class="reason-icon">💝</div>
+                    <div class="reason-content">
+                        <p class="reason-text">
+                            Of all the beautiful reasons I've shared, this one holds the deepest truth:<br><br>
+                            <strong>You are everything I'm not, and I love you most for that.</strong><br><br>
+                            You complete me in ways I never knew were missing. You bring colors to my world 
+                            that my eyes couldn't see before. Your strengths are my weaknesses, 
+                            your light finds my shadows, and your presence makes me a better person 
+                            simply by being who you are. You're not just my other half - you're the part 
+                            of me I never knew I needed until I found you. 🌈
+                        </p>
+                    </div>
+                </div>
+
+                <div class="final-actions">
+                    <button class="btn nav-btn prev-btn" onclick="navigateToPage(4)">
+                        ← Previous
+                    </button>
+                    <button class="btn restart-btn" onclick="navigateToPage(1)">
+                        Start Over 💖
+                    </button>
+                </div>
+
+                <div class="eternal-promise">
+                    <p class="promise-text">
+                        This website may end here, but my love for you never will.<br>
+                        You are, and always will be, my everything. 💕
+                    </p>
+                </div>
+            </div>
+
+            <div class="gif-container">
+                <div class="gif-frame">
+                    <!-- Replace this URL with your actual GIF -->
+                    <img src="heart.gif" alt="Romantic GIF" class="romantic-gif">
+                    <p class="gif-caption">This is how you make me feel every day 💖</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation function for final page
+        function navigateToPage(pageNumber) {
+            const pages = [
+                "index.html",
+                "page2.html", 
+                "page3.html",
+                "page4.html",
+                "page5.html"
+            ];
+            
+            if (pageNumber >= 1 && pageNumber <= pages.length) {
+                window.location.href = pages[pageNumber - 1];
+            }
+        }
+
+        const pageConfig = {
+            nextPage: "index.html", // Loops back to start
+            totalPages: 5
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

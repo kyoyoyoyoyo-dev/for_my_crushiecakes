@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffb6c1 0%, #d4e8c6 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.reason-text strong {
+    color: #ff1493;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+.hearts-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 20%; animation-delay: 1s; }
+.heart:nth-child(3) { left: 50%; animation-delay: 2s; }
+.heart:nth-child(4) { left: 70%; animation-delay: 3s; }
+.heart:nth-child(5) { left: 85%; animation-delay: 4s; }
+.heart:nth-child(6) { left: 25%; animation-delay: 0.3s; }
+.heart:nth-child(7) { left: 45%; animation-delay: 1.2s; }
+.heart:nth-child(8) { left: 75%; animation-delay: 2.1s; }
+
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.message-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 2px solid #ff69b4;
+    max-width: 500px;
+}
+
+.title {
+    color: #ff69b4;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    color: #8fbc8f;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.game-invitation {
+    margin-top: 20px;
+}
+
+.invite-text {
+    color: #666;
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    min-width: 180px;
+    position: relative;
+    z-index: 10;
+}
+
+.yes-btn {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+.yes-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+}
+
+.no-btn {
+    background: linear-gradient(45deg, #98fb98, #8fbc8f);
+    color: white;
+    box-shadow: 0 5px 15px rgba(143, 188, 143, 0.4);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.no-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(143, 188, 143, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .message-box {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    .title {
+        font-size: 2em;
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        min-width: 200px;
+    }
+}
+
+/* Page indicator styles */
+.page-indicator {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.page-number {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.page-total {
+    opacity: 0.8;
+}
+
+/* Reason card styles */
+.reason-card {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(212, 232, 198, 0.2));
+    border: 2px solid #ffb6c1;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reason-icon {
+    font-size: 3em;
+    flex-shrink: 0;
+}
+
+.reason-content {
+    flex: 1;
+}
+
+.reason-text {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-align: left;
+    margin: 0;
+}
+
+/* Navigation buttons for multi-page sites */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    padding: 12px 25px;
+    font-size: 1em;
+    min-width: 140px;
+}
+
+.prev-btn {
+    background: linear-gradient(45deg, #98fb98, #8fbc8f);
+    color: white;
+}
+
+.next-btn {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design for reason card */
+@media (max-width: 600px) {
+    .reason-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .reason-text {
+        text-align: center;
+    }
+    
+    .navigation-buttons {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        min-width: 100%;
+    }
+}
+
+/* Final page specific styles */
+.final-message {
+    max-width: 600px;
+}
+
+.final-card {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(212, 232, 198, 0.3));
+    border: 3px solid #ff69b4;
+    margin: 40px 0;
+}
+
+.final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.restart-btn {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+.restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+}
+
+.eternal-promise {
+    background: linear-gradient(45deg, rgba(255, 105, 180, 0.1), rgba(143, 188, 143, 0.1));
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 2px dashed #ff69b4;
+}
+
+.promise-text {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Add the new floating emojis */
+.heart:nth-child(6) { left: 15%; animation-delay: 0.2s; }
+.heart:nth-child(7) { left: 35%; animation-delay: 1.0s; }
+.heart:nth-child(8) { left: 65%; animation-delay: 1.8s; }
+.heart:nth-child(9) { left: 85%; animation-delay: 2.5s; }
+
+/* Responsive design for final page */
+@media (max-width: 600px) {
+    .final-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .final-actions .btn {
+        min-width: 200px;
+    }
+    
+    .eternal-promise {
+        padding: 20px 15px;
+    }
+}
+
+/* Final page layout with GIF */
+.final-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.final-message {
+    flex: 1;
+    max-width: 600px;
+}
+
+.gif-container {
+    flex: 0 0 300px;
+    position: sticky;
+    top: 20px;
+}
+
+.gif-frame {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ff69b4;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.romantic-gif {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ffb6c1;
+}
+
+.gif-caption {
+    color: #ff69b4;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Final page specific styles */
+.final-card {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(212, 232, 198, 0.3));
+    border: 3px solid #ff69b4;
+    margin: 40px 0;
+}
+
+.final-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.restart-btn {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+}
+
+.restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+}
+
+.eternal-promise {
+    background: linear-gradient(45deg, rgba(255, 105, 180, 0.1), rgba(143, 188, 143, 0.1));
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border: 2px dashed #ff69b4;
+}
+
+.promise-text {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Add the new floating emojis */
+.heart:nth-child(6) { left: 15%; animation-delay: 0.2s; }
+.heart:nth-child(7) { left: 35%; animation-delay: 1.0s; }
+.heart:nth-child(8) { left: 65%; animation-delay: 1.8s; }
+.heart:nth-child(9) { left: 85%; animation-delay: 2.5s; }
+
+/* Responsive design for final page */
+@media (max-width: 900px) {
+    .final-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .gif-container {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        position: static;
+        margin-top: 20px;
+    }
+    
+    .final-message {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .final-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .final-actions .btn {
+        min-width: 200px;
+    }
+    
+    .eternal-promise {
+        padding: 20px 15px;
+    }
+    
+    .gif-container {
+        max-width: 250px;
+    }
+}

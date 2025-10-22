@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reason #3 🌎</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="hearts.png">
+</head>
+<body>
+    <div class="container">
+        <div class="hearts-background">
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+            <div class="heart">💓</div>
+            <div class="heart">💞</div>
+            <div class="heart">🌎</div>
+            <div class="heart">💫</div>
+            <div class="heart">✨</div>
+        </div>
+        
+        <div class="message-box">
+            <div class="page-indicator">
+                <span class="page-number">4</span>
+                <span class="page-total">/5</span>
+            </div>
+            
+            <h1 class="title">Reason #3 🌎</h1>
+            <p class="subtitle">My eternal commitment...</p>
+            
+            <div class="reason-card">
+                <div class="reason-icon">💝</div>
+                <div class="reason-content">
+                    <p class="reason-text">
+                        You are my entire world - the gravity that holds me together, 
+                        the light that guides me, and the air that gives me life. 
+                        My devotion to you is absolute and unwavering. 
+                        <strong>I wouldn't give you up for anything, even if it meant facing eternity itself.</strong>
+                        This isn't just something I say - it's the truth I live by, 
+                        the promise engraved in my soul, and the commitment that defines my existence. 🌹
+                    </p>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn nav-btn prev-btn" onclick="navigateToPage(3)">
+                    ← Previous
+                </button>
+                <button class="btn nav-btn next-btn" onclick="navigateToPage(5)">
+                    Final Page →
+                </button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Navigation function for all pages
+    function navigateToPage(pageNumber) {
+        const pages = [
+            "index.html",
+            "page2.html", 
+            "page3.html",
+            "page4.html",
+            "page5.html"
+        ];
+        
+        if (pageNumber >= 1 && pageNumber <= pages.length) {
+            window.location.href = pages[pageNumber - 1];
+        }
+    }
+
+    // Page-specific configuration
+    const pageConfig = {
+        nextPage: "page3.html", // Change this for each page
+        totalPages: 5
+    };
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reason #2 🎵</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="hearts.png">
+</head>
+<body>
+    <div class="container">
+        <div class="hearts-background">
+            <div class="heart">💖</div>
+            <div class="heart">💕</div>
+            <div class="heart">💗</div>
+            <div class="heart">💓</div>
+            <div class="heart">💞</div>
+            <div class="heart">🎵</div>
+            <div class="heart">🎶</div>
+        </div>
+        
+        <div class="message-box">
+            <div class="page-indicator">
+                <span class="page-number">3</span>
+                <span class="page-total">/5</span>
+            </div>
+            
+            <h1 class="title">Reason #2 🎵</h1>
+            <p class="subtitle">The melody of my heart...</p>
+            
+            <div class="reason-card">
+                <div class="reason-icon">😊</div>
+                <div class="reason-content">
+                    <p class="reason-text">
+                        You have this magical way of making me smile, even when I'm not in the mood. 
+                        Your presence brings light to my world, and your laughter is my favorite sound. 
+                        But most beautifully, you are my Ninth Symphony - that perfect, magnificent 
+                        masterpiece that completes my soul's composition and makes my heart sing 
+                        in ways I never knew possible. 🎶
+                    </p>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <button class="btn nav-btn prev-btn" onclick="navigateToPage(2)">
+                    ← Previous
+                </button>
+                <button class="btn nav-btn next-btn" onclick="navigateToPage(4)">
+                    Next Reason →
+                </button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    // Navigation function for all pages
+    function navigateToPage(pageNumber) {
+        const pages = [
+            "index.html",
+            "page2.html", 
+            "page3.html",
+            "page4.html",
+            "page5.html"
+        ];
+        
+        if (pageNumber >= 1 && pageNumber <= pages.length) {
+            window.location.href = pages[pageNumber - 1];
+        }
+    }
+
+    // Page-specific configuration
+    const pageConfig = {
+        nextPage: "page3.html", // Change this for each page
+        totalPages: 5
+    };
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>
