@@ -475,4 +475,75 @@ body {
     .gif-container {
         max-width: 250px;
     }
+
+}
+
+/* Base responsive settings */
+html {
+    font-size: 16px;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .message-box {
+        margin: 10px;
+        padding: 20px 15px;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .message-box {
+        margin: 15px;
+        padding: 25px 20px;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+    
+    .message-box {
+        max-width: 600px;
+    }
+}
+
+/* Very small screens (old phones) */
+@media (max-width: 320px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        min-width: 140px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Prevent text size adjustment on orientation change */
+body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
