@@ -54,8 +54,7 @@
         </div>
     </div>
 
-<script>
-    // Navigation function for all pages
+    <script>
     function navigateToPage(pageNumber) {
         const pages = [
             "index.html",
@@ -66,17 +65,13 @@
         ];
         
         if (pageNumber >= 1 && pageNumber <= pages.length) {
-            window.location.href = pages[pageNumber - 1];
+            // Add cache-busting parameter
+            const timestamp = new Date().getTime();
+            window.location.href = pages[pageNumber - 1] + '?v=' + timestamp;
         }
     }
-
-    // Page-specific configuration
-    const pageConfig = {
-        nextPage: "page3.html", // Change this for each page
-        totalPages: 5
-    };
-</script>
-
+    </script>
     <script src="script.js"></script>
 </body>
+
 </html>
